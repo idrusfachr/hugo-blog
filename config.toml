@@ -1,7 +1,6 @@
-baseURL = "https://example.com/"
+baseURL = "https://idrusfachr.netlify.com/"
 languageCode = "en"                                      # website language
 defaultContentLanguage = "en"                            # [en, zh, ...] determines which i18n file to use
-disableLanguages = ["zh"]
 title = "idrusfachr"                                   # website title
 theme = "LoveIt"
 enableGitInfo = false                                    # whether to use git commit log to generate lastmod record
@@ -26,7 +25,7 @@ pygmentsCodefencesGuessSyntax = true
 unsafe = true
 
 [author]                                              #### Author Info
-  name = "<Muhammad Idrus F"
+  name = "Muhammad Idrus F"
 
 [sitemap]                                             #### Sitemap Info
   changefreq = "weekly"
@@ -76,16 +75,16 @@ unsafe = true
   home_mode = "post"                                     # [post, other] home mode
   home_paginate = 6                                      # special amount of posts in each home post page
   avatar = "images/avatar.png"                           # URL of avatar shown in home page
-  subtitle = "I'm Muhammad Idrus Fachruddin. This my personal blog, mostly about data & analytics"  # subtitle shown in home page
+  subtitle = "I am Muhammad Idrus Fachruddin. This my personal blog, mostly about data & analytics"  # subtitle shown in home page
 
   socialShare = true                                     # whether to show social share links in post page
 
                                                       #### Footer CopyRight Info
-  since = 2017                                           # Site creation time
+  since = 2016                                           # Site creation time
   icp = ''                                               # ICP info only in China (HTML format is allowed)
   license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
                                                          # license info (HTML format is allowed)
-  gitRepo = ""                                           # public git repo url to link lastmod git commit only then enableGitInfo is true
+  gitRepo = "https://github.com/idrusfachr/hugo-blog"                                           # public git repo url to link lastmod git commit only then enableGitInfo is true
 
   linkToMarkdown = true                                  # whether to show link to Raw Markdown content of the post
 
@@ -125,7 +124,6 @@ unsafe = true
     Linkedin = "idrusfachr"
     Twitter = "idrusfachr"
     Instagram = "idrusfachr"
-    #Email = "xxxx"
     #Facebook = "xxxx"
     Telegram = "idrusfachr"
     Medium = "idrusfachr"

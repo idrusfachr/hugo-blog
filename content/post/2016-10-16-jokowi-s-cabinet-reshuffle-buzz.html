@@ -1,0 +1,72 @@
+---
+title: Jokowi's Cabinet Reshuffle Buzz
+author: idrusfachr
+date: '2016-10-16'
+slug: jokowi-s-cabinet-reshuffle-buzz
+categories:
+  - R
+tags:
+  - social media analytics
+  - R
+  - wordcloud
+  - text mining
+lastmod: '2020-02-03T21:51:16+07:00'
+description: ''
+show_in_homepage: yes
+show_description: no
+license: ''
+featured_image: ''
+featured_image_preview: ''
+comment: yes
+toc: no
+autoCollapseToc: yes
+math: no
+---
+
+
+<div id="TOC">
+no
+</div>
+
+<p>###Background
+President Joko Widodo announced cabinet reshuffle on 27th July, 2016. A move aimed at enhancing the effectiveness of his cabinet. This thing generated mixed responses from netizen. Some are pros and others are cons. Knowing about what people think about reshuffle looks interesting. So, I analyze what people talk on twitter regarding reshuffle topic by tracking keyword “#reshuffle” then extract information from there.</p>
+<p>###Data
+I collect data from 27 July 2016 till 3 August 2016 and got total of 15,290 tweets contains hashtag #reshuffle (of course, actually more than that number of tweets about #reshuffle out there). I use <a href="https://cran.r-project.org/web/packages/twitteR/twitteR.pdf"><code>twitteR</code></a> package by Jeff Gentry to crawl the tweets.</p>
+<p>###Analysis</p>
+<p>####Type of Tweets
+Let’s start the analysis by knowing the tweet behaviour over #reshuffle keyword on twitter.
+<img src="/post/2016-10-16-jokowi-s-cabinet-reshuffle-buzz_files/type_of_tweet.png" alt="Type of tweet" /></p>
+<p>It seems netizens is more like to retweet people tweet (55.4%) instead of express their own thought (tweet, 42.5%). Few of them (2,07%) did further discussion by replying tweet each others.</p>
+<div class="figure">
+<img src="/post/2016-10-16-jokowi-s-cabinet-reshuffle-buzz_files/rush_hour_tweet.png" alt="time tweet distribution by hour" />
+<p class="caption">time tweet distribution by hour</p>
+</div>
+<p>This graph shows the distribution of time used by netizens to active on twitter. It looks netizens more like to spend their morning time to active on twitter instead of in the night. Peak time is at 8.00 am.</p>
+<p>####Influencer
+Now, we will find out who’s the ‘buzzer’ on twitter that spread tweet about #reshuffle. Here you go.</p>
+<div class="figure">
+<img src="/post/2016-10-16-jokowi-s-cabinet-reshuffle-buzz_files/influencer.png" alt="Top 5 infleuncer" />
+<p class="caption">Top 5 infleuncer</p>
+</div>
+<p>There are total of 6081 unique users posted about #reshuffle on that period with impression 837,660,066. Graph above shows the top 10 twitter accounts who posted the most.</p>
+<div id="who-got-the-star" class="section level4">
+<h4>Who got the star?</h4>
+<p>Below is the popularity distribution of ministers that get involve in this cabinet reshuffle. Let’s see who is the most talked (popular) minister over reshuffle issue.</p>
+<div class="figure">
+<img src="/post/2016-10-16-jokowi-s-cabinet-reshuffle-buzz_files/ministry.png" alt="Ministries with top mentions" />
+<p class="caption">Ministries with top mentions</p>
+</div>
+<p>####What’s netizens said?
+Ok, in above we have known ministers that are populer among netizens. So, what their thought about them? Did they say good sentimet or vise versa?</p>
+<p>Let wordcloud answers your question. Wordcloud below is clustered wordcloud for top 4 popular ministers that mentioned the most by netizens.
+<img src="/post/2016-10-16-jokowi-s-cabinet-reshuffle-buzz_files/clustered_wordcloud.png" alt="Clustered wordcloud of top 4 popular ministers." /></p>
+<p><strong>Wiranto</strong>
+Wiranto is linked to law issue since terms most appear around him are ‘kejahatan’, ‘dakwaan’, and ‘ham’.</p>
+<p><strong>Anies Baswedan</strong>
+Anies Baswedan seems got positive impression by netizens. They thanks to Anies for his performance, netizens also dissappoint about the replacement of Anies Baswedan</p>
+<p><strong>Sri Mulyani</strong>
+People are welcoming back Sri Mulyani, they hope she can heal ou economy.</p>
+<p><strong>Ignatius Jonan</strong>
+Ignatius Jonan, got mixed sentimen from netizen. Some are agree with his replacement, others are disappoint regarding his replacement because they think Jonan is good enough.</p>
+<!--more-->
+</div>
