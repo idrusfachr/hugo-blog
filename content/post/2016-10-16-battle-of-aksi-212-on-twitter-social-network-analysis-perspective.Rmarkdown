@@ -1,15 +1,15 @@
 ---
-title: 'Battle of Aksi 212 in Twitter: Social Network Analysis Perspective'
+title: 'Battle of Aksi 212 on Twitter: Social Network Analysis Perspective'
 author: idrusfachr
-date: '2016-12-02'
-slug: battle-of-aksi-212-in-twitter-social-network-analysis-perspective
+date: '2016-10-16'
+slug: battle-of-aksi-212-on-twitter-social-network-analysis-perspective
 categories:
   - R
 tags:
   - social network analysis
   - R
   - text mining
-lastmod: '2020-02-03T22:57:34+07:00'
+lastmod: '2020-02-05T00:13:46+07:00'
 description: ''
 show_in_homepage: yes
 show_description: no
@@ -31,8 +31,7 @@ By applying [social network analysis](https://en.wikipedia.org/wiki/Social_netwo
 ### The Battle is Real
 After doing some preprocessing and preparation of data, here is the network visualization of data I'd collected.
 
-
-![Social Network of #aksibelaislam](/post/2016-12-02-battle-of-aksi-212-in-twitter-social-network-analysis-perspective_files/aksibelaislam3.png)
+![Social Network of #aksibelaislam](/post/2016-10-16-battle-of-aksi-212-on-twitter-social-network-analysis-perspective_files/aksibelaislam3.png)
 
 ### What the graph tell us?
 
