@@ -1,0 +1,24 @@
+---
+title: 'Testing: coba'
+author: test01
+date: '2020-02-05'
+slug: testing-coba
+categories:
+  - Documentation
+tags:
+  - R Markdown
+lastmod: '2020-02-05T00:03:09+07:00'
+description: ''
+show_in_homepage: yes
+show_description: no
+license: ''
+featured_image: ''
+featured_image_preview: ''
+comment: yes
+toc: no
+autoCollapseToc: yes
+math: no
+---
+
+your text is here.. R.Markdown coba
+<!--more-->
