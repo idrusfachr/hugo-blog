@@ -10,6 +10,7 @@ enableEmoji = true                                       # whether to use emoji 
 enableRobotsTXT = true                                   # whether to use robots.txt
 googleAnalytics = ""                                     # [UA-XXXXXXXX-X] google analytics code
 disqusShortname = "idrusfachr"                             # Disqus shortname to use Disqus in posts
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
                                                          # copyright description used only for seo schema
 
