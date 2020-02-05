@@ -34,7 +34,7 @@ unsafe = true
   priority = 0.5
 
 [Permalinks]                                          #### Permalinks Info (https://gohugo.io/content-management/urls/#permalinks)
-  posts = ":year/:month/:filename"
+  posts = ":year/:month/:slug"
 
 [menu]                                                #### Menu Info
   [[menu.main]]
@@ -47,13 +47,13 @@ unsafe = true
     identifier = "tags"
     name = "Tags"
     url = "tags"
-    weight = 2
+    weight = 3
 
   [[menu.main]]
     identifier = "categories"
     name = "Categories"
     url = "categories"
-    weight = 3
+    weight = 2
 
   [[menu.main]]
     identifier = "about"
@@ -73,7 +73,7 @@ unsafe = true
   keywords = ["XXXX", "Theme", "Hugo"]                   # site keywords
 
                                                       #### Home Page Info
-  home_mode = "post"                                     # [post, other] home mode
+  home_mode = ""                                     # [post, other] home mode
   home_paginate = 6                                      # special amount of posts in each home post page
   avatar = "images/avatar.png"                           # URL of avatar shown in home page
   subtitle = "I am Muhammad Idrus Fachruddin. This my personal blog, mostly about data & analytics"  # subtitle shown in home page
