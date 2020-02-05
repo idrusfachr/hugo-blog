@@ -10,6 +10,7 @@ tags:
   - text mining
   - Twitter
 lastmod: '2020-02-05T13:32:44+07:00'
+draft: false
 description: ''
 show_in_homepage: yes
 show_description: no

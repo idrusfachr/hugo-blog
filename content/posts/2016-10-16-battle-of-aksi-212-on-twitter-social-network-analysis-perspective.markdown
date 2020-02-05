@@ -10,6 +10,7 @@ tags:
   - R
   - text mining
 lastmod: '2020-02-05T00:13:46+07:00'
+draft: false
 description: ''
 show_in_homepage: yes
 show_description: no

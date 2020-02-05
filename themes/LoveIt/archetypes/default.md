@@ -2,7 +2,7 @@
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: {{ .Date }}
 lastmod: {{ .Date }}
-draft: true
+draft: false
 description: ""
 show_in_homepage: true
 show_description: false
@@ -15,7 +15,7 @@ featured_image: ''
 featured_image_preview: ''
 
 comment: true
-toc: false
+toc: true
 autoCollapseToc: true
 math: false
 ---
