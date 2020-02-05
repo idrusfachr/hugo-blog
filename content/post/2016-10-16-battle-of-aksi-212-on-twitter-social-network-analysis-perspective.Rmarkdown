@@ -43,16 +43,23 @@ After doing some preprocessing and preparation of data, here is the network visu
 ### Network Characteristic 
 If we refer to [Michael Lieberman paper](https://ieeexplore.ieee.org/author/37301531100) network characteristic in SNA, then the network characteristic of my data be like this.
 * Aksi 212 in general
-** Polarized
+  * Polarized
 Two main clusters (pro side and contra side) with no interconnection
-** Bazaar
+  * Bazaar
 Many small/medium groups, some isolates
 * Pro side
-** In-group
+  * In-group
 Many connection, few disconnected isolate
 * Contra side
-** Broadcast
+  * Broadcast
 A hub which is retweeted by many disconnected users
+
+
+
+
+
+
+
 
 
 <!--more-->
