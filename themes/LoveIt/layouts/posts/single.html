@@ -99,5 +99,8 @@
             {{ partial "comments.html" . }}
             {{ end }}
         </div>
+        {{ if .IsPage }}
+  {{ template "_internal/disqus.html" . }}
+{{ end }}
     </article>
 {{- end }}
