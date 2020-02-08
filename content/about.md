@@ -14,7 +14,7 @@ Saya bersyukur ilmu yang saya pelajari bisa saya gunakan dalam pekerjaan sehari-
 
 
 ### Tentang saya
-Saya lebih suka memperkenalkan diri sebagai Data Analyst. Sehari-hari bekerja juga sebagai data analyst di industri digital sejak 2015.
+Saya bekerja sebagai data analyst di industri digital sejak 2015. Lebih suka menggunakan R sebagai senjata andalan menyelesaikan task sehari-hari. Mengenal R sejak kuliah dan semakin intens saat menyelesaikan skripsi.
 
 
 :(fab fa-google): email : idrus.stat11@gmail.com
