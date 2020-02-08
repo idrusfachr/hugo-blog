@@ -157,30 +157,6 @@ population$provinsi <-tolower(population$provinsi)
 
 #join the two datasets
 library(dplyr)
-```
-
-```
-## Warning: package 'dplyr' was built under R version 3.6.2
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 idn_pop_density <- inner_join(idn_shape_df, population, by = "provinsi")
 head(idn_pop_density)
 ```

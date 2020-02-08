@@ -151,6 +151,7 @@ map_pop_density + scale_fill_gradient(trans = "log10",
 ```
 Looks better now. Nothing special with the data as we know that Java has very high population compared to others province/area in Indonesia, and we are not discussing about that point this time. This is just an example of how to  visualise map/spatial data especially for Indonesian area using R which is open source (free) tools instead of using paid tools. We can then replace the fill by others value like number of sufferer of certain desaese to map the its spreadness or others data we desire.
 
+**Note :** __If you notice there are some province that has white color, It's because the province name on data from BPS and `.shp` file are different. So when we join that two tables, some rows are not match. For example `Kep. Riau` and `Kepulauan Riau`, `Papua Barat` and `Irian Jaya Bara`, `Bangka-Belitung` and `Bangka Belitung`, etc. It needs further processing to handle this task may be using `regex join` ect. But i won't cover that on this post.__
 
 Refference:
 - http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html
