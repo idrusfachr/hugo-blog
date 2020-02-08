@@ -69,8 +69,8 @@ unsafe = true
 
 [params]
   version = "5.x"                                        # LoveIt theme version
-  description = "LoveIt Theme Demo"                      # site description
-  keywords = ["XXXX", "Theme", "Hugo"]                   # site keywords
+  description = "idrusfachr personal data blog"                      # site description
+  keywords = ["r", "blog", "analytics"]                   # site keywords
 
                                                       #### Home Page Info
   home_mode = ""                                     # [post, other] home mode
@@ -88,7 +88,11 @@ unsafe = true
   gitRepo = "https://github.com/idrusfachr/hugo-blog"                                           # public git repo url to link lastmod git commit only then enableGitInfo is true
 
   linkToMarkdown = true                                  # whether to show link to Raw Markdown content of the post
-
+  
+  highlightjsVersion = "9.12.0"
+  highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
+  highlightjsLang = ["r", "yaml"]
+  highlightjsTheme = "github"
                                                       #### site verification code for Google/Bing/Yandex/Pinterest/Baidu
   google_verification = ""
   bing_verification = ""

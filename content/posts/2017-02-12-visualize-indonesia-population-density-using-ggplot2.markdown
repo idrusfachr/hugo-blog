@@ -17,19 +17,19 @@ license: ''
 featured_image: ''
 featured_image_preview: ''
 comment: yes
-toc: yes
+toc: no
 autoCollapseToc: yes
 math: no
 ---
 
 <!--more-->
 
-# Intro
+## Intro
 Many peoples say that ggplot is a powerful package for visualization in R. I know that. But i'd never triggered to explore this package deeper (except just to visualize mainstream plot like pie chart, bar chart, etc.) till this [post](http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html) impressed me.
 
 That post is about plotting map using ggplot. The pretty plots resulted on that post challenged me to explore ggplot more, especially in plotting map/spatial data.
 
-# Preparation
+## Preparation
 
 We always need data for any analysis. The author of those post use USA map data available in `ggplot2` package. Though that post is reproducible research (data and code are available) menas i can re-run the examole on my own, but I want to go with local using Indonesia map data.
 
@@ -38,7 +38,7 @@ The [first data](https://www.bps.go.id/linkTableDinamis/view/id/843) is availabl
 
 Oke, now we arrive to the hardest part. I stacked for a while when searching Indonesia map data that suit for ggplot2 geom_polygon format. But Alhamdillah, after read some articles about kind of spatial data, I got one clue, I need shape data with .shp format to plot map data. And just by typing "indonesian .shp data" on google, He will provide us tons of link results. Finally, I got Indonesian .shp data from this [site](http://biogeo.ucdavis.edu/data/gadm2.8/shp/IDN_adm_shp.zip). I downloaded level 1 data (province level) for this analysis.
 
-## Data Acquisition
+### Data Acquisition
 
 The fist step is load data into R. I use rgdal package to import .shp data. rgdal is more efficient in loading shape data compared to others package like maptools, etc.
 
@@ -172,7 +172,7 @@ head(idn_pop_density)
 ```
 `idn_pop_density` is the final data that will we visualise using `ggplot2`.
 
-# Visualise Indonesia map data
+## Visualise Indonesia map data
 Time to the main part of this analysis, plotting the density map.
 
 ```r
@@ -198,7 +198,7 @@ map_pop_density
 
 <img src="/posts/2017-02-12-visualize-indonesia-population-density-using-ggplot2_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
-## Final touch
+### Final touch
 Cool! but it looks like it's hard to discern the different in area. Let's make it clearer by transforming the value of density by log10 , reseve the density color to make the more dark color indicate the more dense area also change legend title.
 
 ```r
@@ -210,6 +210,7 @@ map_pop_density + scale_fill_gradient(trans = "log10",
 <img src="/posts/2017-02-12-visualize-indonesia-population-density-using-ggplot2_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 Looks better now. Nothing special with the data as we know that Java has very high population compared to others province/area in Indonesia, and we are not discussing about that point this time. This is just an example of how to  visualise map/spatial data especially for Indonesian area using R which is open source (free) tools instead of using paid tools. We can then replace the fill by others value like number of sufferer of certain desaese to map the its spreadness or others data we desire.
 
+**Note :** _If you notice there are some provinces that has white color, It's because the province name on data from BPS and `.shp` file has different value. So when we join that two tables by province name, some rows doesn't match. For example `Kep. Riau` and `Kepulauan Riau`, `Papua Barat` and `Irian Jaya Bara`, `Bangka-Belitung` and `Bangka Belitung`. It needs further processing to handle this may be using `regex join` etc. But i won't cover that on this post._
 
 Refference:
 - http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html
