@@ -4,7 +4,7 @@ author: Idrusfachr
 date: '2016-10-16'
 slug: jokowi-s-cabinet-reshuffle-buzz
 categories:
-  - R
+  - Analysis
 tags:
   - R
   - text mining

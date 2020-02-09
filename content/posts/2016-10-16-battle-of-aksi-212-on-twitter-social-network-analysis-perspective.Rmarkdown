@@ -4,7 +4,7 @@ author: idrusfachr
 date: '2016-12-02'
 slug: battle-of-aksi-212-on-twitter-social-network-analysis-perspective
 categories:
-  - R
+  - Analysis
 tags:
   - social network analysis
   - R
