@@ -17,8 +17,9 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
                                                       #### Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
 pygmentsOptions = "linenos=table"
 pygmentsCodefences = true
-pygmentsUseClasses = true
+pygmentsUseClasses = false
 pygmentsCodefencesGuessSyntax = true
+pygmentsStyle = "monokailight"
 
 [markup]
 [markup.goldmark]

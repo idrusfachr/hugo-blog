@@ -40,20 +40,15 @@ Oke, now we arrive to the hardest part. I stacked for a while when searching Ind
 
 The fist step is load data into R. I use rgdal package to import .shp data. rgdal is more efficient in loading shape data compared to others package like maptools, etc.
 
+
+
 ```r
 #import data .shp file
 library("rgdal")
 #import .shp data
-idn_shape <- readOGR(dsn = path.expand("/Users/Muhammad Idrus F/Documents/IDN_adm"), layer="IDN_adm1")
+idn_shape <- readOGR(dsn = path.expand("/YOUR_PATH/IDN_adm"), layer="IDN_adm1")
 ```
 
-```
-## OGR data source with driver: ESRI Shapefile 
-## Source: "C:\Users\Muhammad Idrus F\Documents\IDN_adm", layer: "IDN_adm1"
-## with 34 features
-## It has 12 fields
-## Integer64 fields read as strings:  ID_0 ID_1 CCN_1
-```
 Here's one of the advantages using `rgdal` package, though it is in shape format we can use operation like `names()`, `table()`, and `$` subset operation like in data frame format.
 
 After data loaded into R workspace, we need to reformat shape data into format that suit to `ggplot2` function.
@@ -86,7 +81,7 @@ ggplot() +
   coord_fixed(1.3)
 ```
 
-<img src="/posts/2017-02-12-visualize-indonesia-s-population-data-using-ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="/posts/2017-02-12-visualize-indonesia-s-population-data-using-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 It works!, my data has suitable for ggplot2 format. Let's make it more colorful by colorize each province.
 
@@ -98,9 +93,11 @@ ggplot(data = idn_shape_df) +
   guides(fill=FALSE)  # do this to leave off the color legend
 ```
 
-<img src="/posts/2017-02-12-visualize-indonesia-s-population-data-using-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="/posts/2017-02-12-visualize-indonesia-s-population-data-using-ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
 Cool! looks much better. But that's not the goal of this analysis. Let's moving forward. Now need to add population density data to complete the analysis.
+
+
 
 
 ```r
@@ -110,15 +107,6 @@ population <- population[,c(5,6)] #put only needed variable
 head(population)
 ```
 
-```
-##   data_content nama_item_vertical_variabel
-## 1           86                        ACEH
-## 2          191              SUMATERA UTARA
-## 3          124              SUMATERA BARAT
-## 4           73                        RIAU
-## 5           68                       JAMBI
-## 6           88            SUMATERA SELATAN
-```
 to make it more intuitive, let's change the column name with what it should be.
 
 ```r
@@ -201,7 +189,7 @@ map_pop_density <- ggplot(data = idn_shape_df, mapping = aes(x = long, y = lat, 
 map_pop_density
 ```
 
-<img src="/posts/2017-02-12-visualize-indonesia-s-population-data-using-ggplot2_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+<img src="/posts/2017-02-12-visualize-indonesia-s-population-data-using-ggplot2_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 
 ### Final touch
 Cool! but it looks like it's hard to discern the different in area. Let's make it clearer by transforming the value of density by log10 , reseve the density color to make the more dark color indicate the more dense area also change legend title.
@@ -212,7 +200,7 @@ map_pop_density + scale_fill_gradient(trans = "log10",
                                       name="jiwa/km2")
 ```
 
-<img src="/posts/2017-02-12-visualize-indonesia-s-population-data-using-ggplot2_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="/posts/2017-02-12-visualize-indonesia-s-population-data-using-ggplot2_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 Looks better now. Nothing special with the data as we know that Java has very high population compared to others province/area in Indonesia, and we are not discussing about that point this time. This is just an example of how to  visualise map/spatial data especially for Indonesian area using R which is open source (free) tools instead of using paid tools. We can then replace the fill by others value like number of sufferer of certain desaese to map the its spreadness or others data we desire.
 
 

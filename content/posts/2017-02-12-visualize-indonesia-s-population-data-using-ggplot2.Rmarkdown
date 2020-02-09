@@ -39,12 +39,20 @@ Oke, now we arrive to the hardest part. I stacked for a while when searching Ind
 ### Data Acquisition
 
 The fist step is load data into R. I use rgdal package to import .shp data. rgdal is more efficient in loading shape data compared to others package like maptools, etc.
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE, include=FALSE}
 #import data .shp file
 library("rgdal")
 #import .shp data
 idn_shape <- readOGR(dsn = path.expand("/Users/Muhammad Idrus F/Documents/IDN_adm"), layer="IDN_adm1")
 ```
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+#import data .shp file
+library("rgdal")
+#import .shp data
+idn_shape <- readOGR(dsn = path.expand("/YOUR_PATH/IDN_adm"), layer="IDN_adm1")
+```
+
 Here's one of the advantages using `rgdal` package, though it is in shape format we can use operation like `names()`, `table()`, and `$` subset operation like in data frame format.
 
 After data loaded into R workspace, we need to reformat shape data into format that suit to `ggplot2` function.
@@ -76,12 +84,20 @@ ggplot(data = idn_shape_df) +
 
 Cool! looks much better. But that's not the goal of this analysis. Let's moving forward. Now need to add population density data to complete the analysis.
 
-```{r warning=FALSE, message=FALSE}
+```{r message=FALSE, warning=FALSE, include=FALSE}
 #import density data
 population <- read.csv("/Users/Muhammad Idrus F/Downloads/bps-file.csv", sep=";")
 population <- population[,c(5,6)] #put only needed variable
 head(population)
 ```
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+#import density data
+population <- read.csv("/Users/Muhammad Idrus F/Downloads/bps-file.csv", sep=";")
+population <- population[,c(5,6)] #put only needed variable
+head(population)
+```
+
 to make it more intuitive, let's change the column name with what it should be.
 ```{r}
 colnames(population) <- c("density", "provinsi")
