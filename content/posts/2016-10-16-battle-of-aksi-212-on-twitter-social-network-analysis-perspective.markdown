@@ -32,7 +32,7 @@ By applying [social network analysis](https://en.wikipedia.org/wiki/Social_netwo
 ### The Battle is Real
 After doing some preprocessing and preparation of data, here is the network visualization of data I'd collected.
 
-![Social Network of #aksibelaislam](/post/2016-10-16-battle-of-aksi-212-on-twitter-social-network-analysis-perspective_files/aksibelaislam3.png)
+![Social Network of #aksibelaislam](/images/aksibelaislam3.png)
 
 ### What the graph tell us?
 

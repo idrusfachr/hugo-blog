@@ -44,8 +44,7 @@ The fist step is load data into R. I use rgdal package to import .shp data. rgda
 #import data .shp file
 library("rgdal")
 #import .shp data
-idn_shape <- readOGR(dsn = path.expand("/Users/Muhammad Idrus F/Documents/IDN_adm"),
-                     layer="IDN_adm1")
+idn_shape <- readOGR(dsn = path.expand("/Users/Muhammad Idrus F/Documents/IDN_adm"), layer="IDN_adm1")
 ```
 
 ```

@@ -14,9 +14,9 @@ Saya bersyukur ilmu yang saya pelajari selama kuliah bisa tersalurkan dalam peke
 
 
 ## Tentang saya
-Saya bekerja sebagai data analyst di industri digital sejak 2015. Lebih suka menggunakan R (+kopi) sebagai senjata menyelesaikan tasks sehari-hari. Mengenal R sejak kuliah dan semakin intens saat menyelesaikan skripsi. Sesekali juga mencoba Pyhton.
+Saya bekerja sebagai data analyst di industri digital sejak 2015. Lebih suka menggunakan R (+kopi) sebagai senjata menyelesaikan tasks sehari-hari. Mengenal R sejak kuliah dan semakin intens saat menyelesaikan skripsi. Sesekali juga mencoba Python.
 
-Kesibukan lain, sedang menggiatkan hobby _running_ sebagai sarana dendam karena terlalu sering duduk didepan layar. Mencoba menjadi teman belajar yang baik untuk anak dan mendengar nasihat dari para guru saat senggang.
+Kesibukan lain, sedang menggiatkan hobby _running_ sebagai sarana balas dendam karena terlalu sering duduk didepan layar. Mencoba menjadi teman belajar yang baik untuk anak dan mendengar nasihat dari para guru saat senggang.
 
 
 :(fab fa-google): email : idrus.stat11@gmail.com
