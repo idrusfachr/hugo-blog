@@ -21,7 +21,7 @@ toc: yes
 autoCollapseToc: yes
 math: no
 ---
-**Note :** _Artikel ini dipublikasikan pada 2016 diblog lama saya, contoh code nya diperbarui dengan data terbaru saat dipindah keblog ini_ 
+**Note :** _Artikel ini dipublikasikan pada 2016 diblog lama saya, tapi contoh code nya diperbarui dengan data terbaru saat dipindah keblog ini_ 
 
 Pada postingan sebelumnya, saya telah sedikit berbagi tentang social media analytics dan sempat menyinggung sumber data yang digunakan dalam social media analytics diantaranya sosial media, news portal, blog dll. Kali ini, saya akan berbagi salah satu tahap awal dalam analytics yakni pengumpulan data (data harvesting).
 Sesuai judulnya, postingan ini akan membahas tentang cara mendapatkan data dari Twitter sebagai bahan analisis. Dari sosial media populer seperti facebook dan instagram, twitter ini yang paling baik soal open access data. Twitter memberikan akses kepada khalayak untuk mengkonsumsi data mereka lewat API yang mereka sediakan. thanks Jack Dorsey!. API twitter sendiri terdiri 2 jenis yaitu REST API dan Streaming API. Lebih afdholnya langsung ke TKP aja gan untuk penjelasannya :D. Secara singkat bedanya, kalo REST API kita ngambil data di masa lalu hingga sekarang, kalo streaming API kita ngambil data mulai dari sekarang hingga ke depan tergantung berapa lama kita mau ambil. Nah kali ini kita akan menggali kenangan masa lalu di twitter lewat REST API.
@@ -106,21 +106,21 @@ head(tweets_df)
 ## 3     RT @msaid_didu: Semoga Bpk paham bhwa \nPertumbuhan 5 % itu sampai Desember 2019.\nCorona baru terjadi Januari 2020 dan itu di China.\nMari ki…
 ## 4        RT @fahiraidris: Baru-baru ini #Singapura meningkatkan status ancaman virus #Corona di negaranya. Kemlu pun mengingatkan wisatawan Indonesi…
 ## 5                                              RT @CNNIndonesia: Korban Meninggal Akibat Virus Corona di China Jadi 803 Orang https://t.co/pdMvH2av9a
-## 6        RT @Rhapsody512: Assallamualaikum sahabat2ku, kata AaGym kt hrs bijak menyikapi fenomena virus Corona krn virus Corona juga makhluk ciptaan…
+## 6     RT @SisiLusipara: Pedulikah Ia?\n\nPM Singapura Unggah Imbauan Waspada Corona via Youtube, Bagaimana Jokowi?\nDownload Link || https://t.co/so…
 ##   favorited favoriteCount replyToSN             created truncated replyToSID
 ## 1     FALSE             0      <NA> 2020-02-08 23:59:57     FALSE       <NA>
 ## 2     FALSE             0      <NA> 2020-02-08 23:59:55     FALSE       <NA>
 ## 3     FALSE             0      <NA> 2020-02-08 23:59:42     FALSE       <NA>
 ## 4     FALSE             0      <NA> 2020-02-08 23:59:42     FALSE       <NA>
 ## 5     FALSE             0      <NA> 2020-02-08 23:59:39     FALSE       <NA>
-## 6     FALSE             0      <NA> 2020-02-08 23:59:26     FALSE       <NA>
+## 6     FALSE             0      <NA> 2020-02-08 23:59:38     FALSE       <NA>
 ##                    id replyToUID
 ## 1 1226294626266439681       <NA>
 ## 2 1226294620373405696       <NA>
 ## 3 1226294566178848769       <NA>
 ## 4 1226294565889462272       <NA>
 ## 5 1226294551771398144       <NA>
-## 6 1226294497920729088       <NA>
+## 6 1226294548936052736       <NA>
 ##                                                                           statusSource
 ## 1 <a href="http://twitter.com/download/android" rel="nofollow">Twitter for Android</a>
 ## 2 <a href="http://twitter.com/download/android" rel="nofollow">Twitter for Android</a>
@@ -129,12 +129,12 @@ head(tweets_df)
 ## 5 <a href="http://twitter.com/download/android" rel="nofollow">Twitter for Android</a>
 ## 6 <a href="http://twitter.com/download/android" rel="nofollow">Twitter for Android</a>
 ##        screenName retweetCount isRetweet retweeted longitude latitude
-## 1   serendipitwty          709      TRUE     FALSE        NA       NA
-## 2     GilangGum29          333      TRUE     FALSE        NA       NA
-## 3  Voirmountagnes         1748      TRUE     FALSE        NA       NA
-## 4       AbolichdZ          361      TRUE     FALSE        NA       NA
-## 5 NovrikoSulistio          199      TRUE     FALSE        NA       NA
-## 6    indragiri313           89      TRUE     FALSE        NA       NA
+## 1   serendipitwty          825      TRUE     FALSE        NA       NA
+## 2     GilangGum29          342      TRUE     FALSE        NA       NA
+## 3  Voirmountagnes         2363      TRUE     FALSE        NA       NA
+## 4       AbolichdZ          421      TRUE     FALSE        NA       NA
+## 5 NovrikoSulistio          228      TRUE     FALSE        NA       NA
+## 6   anitamarlian2           41      TRUE     FALSE        NA       NA
 ```
 
 Parameter diatas seperti keyword, n, date range dapat kita ubah sesuai dengan keinginan kita, bisa juga kita menambahkan parameter lainnya sesuai dengan yang ada di dokumentasi `twitteR` package. Tentu saja, REST API ini punya limit dalam memberikan data kepada client baik rentang waktu yang bisa diakses maupun jumlah tweet yang diberikan, ada baiknya untuk membaca dulu dokumentasi twitter API sebelum mengaksesnya baik melalui R, python atau bahasa lainnya. Sekian, semoga bermanfaat.
