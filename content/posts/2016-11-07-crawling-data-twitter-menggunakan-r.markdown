@@ -49,7 +49,7 @@ library(devtools)
 install_github("twitteR", username="geoffjentry")  
 ```
 
-### 4. Aktifkan package dan twitter authentication
+### 3. Aktifkan package dan twitter authentication
 Setelah `twitteR` package terinstall, kita tinggal mengaktifkan package dengan function `library(twitteR)`, setelah itu kita perlu melakukan proses autentifikasi menggunakan credential yang kita dapat di step 1 untuk bisa mengakses API twitter. Di package twitteR sendiri telah ada fungsi untuk menjalankan autentifikasi tanpa perlu menggunakan bantuan package lain seperti `httr`.
 
 
@@ -66,7 +66,7 @@ setup_twitter_oauth(api_key, api_secret, token, token_secret) #fungsi untuk aute
 
 Setelah credential telah diaktifkan, sekarang kita sudah bisa mengakses data dari API twitter.
 
-### 5. Crawl data dari twitter
+### 4. Crawl data dari twitter
 Untuk menggenerate data kita menggunakan fungsi `searchTwitter`, fungsi ini mempunyai beberapa parameter, yang terpenting adalah keyword yakni keyword apa yang ingin kita download dari twitter. Kita juga bisa menambah parameter n yakni jumlah tweet yang ingin kita ambil serta mengatur waktu dari rentang kapan data yang mau kita ambil (tentunya dari masa lalu hingga sekarang). Berikut contohnya.
 
 
@@ -129,9 +129,9 @@ head(tweets_df)
 ## 5 <a href="http://twitter.com/download/android" rel="nofollow">Twitter for Android</a>
 ## 6 <a href="http://twitter.com/download/android" rel="nofollow">Twitter for Android</a>
 ##        screenName retweetCount isRetweet retweeted longitude latitude
-## 1   serendipitwty          825      TRUE     FALSE        NA       NA
-## 2     GilangGum29          342      TRUE     FALSE        NA       NA
-## 3  Voirmountagnes         2363      TRUE     FALSE        NA       NA
+## 1   serendipitwty          826      TRUE     FALSE        NA       NA
+## 2     GilangGum29          343      TRUE     FALSE        NA       NA
+## 3  Voirmountagnes         2362      TRUE     FALSE        NA       NA
 ## 4       AbolichdZ          421      TRUE     FALSE        NA       NA
 ## 5 NovrikoSulistio          228      TRUE     FALSE        NA       NA
 ## 6   anitamarlian2           41      TRUE     FALSE        NA       NA

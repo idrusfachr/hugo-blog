@@ -29,36 +29,38 @@ Akhrinya saya menengok lagi blog pribadi saya yang sudah lama terbengkalai. Seba
 
 Dengan menggunakan R blogdown, berarti anda harus setuju blog anda akan menggunakan Hugo. Sebagai informasi Hugo adalah salah satu [static site generator](https://wsvincent.com/what-is-a-static-site-generator/). Selain Hugo ada static site generator lain seperti [Jekyll](https://jekyllrb.com/), [Gatsby](gatsbyjs.org/), dll. 
 
-## Pre-Request
+# Pre-Request
 Selamat datang orang yang semangat belajarnya tinggi. Untuk membuat blog sesuai post ini, maka anda harus punya/melakukan hal-hal berikut.
-* 1. Membaca [blogdown online book](https://bookdown.org/yihui/blogdown/) dari pembuatnya langsung. Setidaknya chapter 1 dulu.
-* 2. [R Studio](https://rstudio.com/products/rstudio/) terinstall di device anda. Apa? belum pake R studio? Anda WAJIB pakai demi kebaikan & kemudahan anda sendiri. Ga cuma untuk keperluan blogging tapi pemakaian R sehari-hari juga.
-* 3. [Github](http://github.com/) account. Harus banget pake github? Yes, you should!. Github memang menyebalkan untuk orang non-hardcore programmer kayak saya. Saya benci belajar git, walaupun tahu manfaatnya. Tapi saya harus belajar github, dan anda juga!. bisa baca disini [Happy Git and GitHub for the useR](httpshttps://happygitwithr.com/)
+1. Membaca [blogdown online book](https://bookdown.org/yihui/blogdown/) dari pembuatnya langsung. Setidaknya chapter 1 dulu.
+2. [R Studio](https://rstudio.com/products/rstudio/) dan [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) terinstall di device anda. Apa? belum pake R studio? Anda WAJIB pakai demi kebaikan & kemudahan anda sendiri. Ga cuma untuk keperluan blogging tapi pemakaian R sehari-hari juga.
+3. [Github](http://github.com/) account. Harus banget pake github? Yes, you should!. Github memang menyebalkan untuk orang non-hardcore programmer kayak saya. Saya benci belajar git, walaupun tahu manfaatnya. Tapi saya harus belajar github, dan anda juga!. bisa baca disini [Happy Git and GitHub for the useR](httpshttps://happygitwithr.com/)
 
 
-## Membuat Blog
-Saya akan bagi stepnya menjadi 3 bagian tentang apa yang harus anda lakukan di :
-* R studio
-* Terminal (command prompt kao di windows)
-* Github
-* Netlify
+# Membuat Blog
+![workflow](/images/workflow.png)
+Saya akan bagi stepnya menjadi 4 bagian tentang apa yang harus anda lakukan di :
+1. R studio
+2. Terminal (command prompt kao di windows)
+3. Github
+4. Netlify
 
-### 1. Di Github
-Hal pertama yang dilakukan adalah membuka github dan masuk ke akun anda. 
-* Buat new repository
+## 1. Di Github
+Hal pertama yang dilakukan adalah membuka github dan masuk ke akun anda (sign up jika belum punya akun). 
+### Buat new repository
 
   Buat repo baru beri nama apapun, misalnya `mypersonal-blog`. Centang initialize with README, beri deskripsi singkat kalo anda mau. Biarkan `add .gitignore` dan `add license` sebagai **None**. Seperti contoh dibawah ini:
   ![](/images/create_repo_blog.png)
-* Buka repo yang baru anda buat dan klik clone this repo
-Di sebelah kanan atas ada button hijau dengan tulisan `clone this repo`. Pilih **clone with https** lalu copy link yang ada. Link yg ter-copy harusnya : https://github.com/yourusername/repo-name.git. Misal:
+### Clone repository
+Buka repo yang baru anda buat dan klik clone this repo. Di sebelah kanan atas ada button hijau dengan tulisan `Clone or Download`. Pilih **clone with https** lalu copy link yang ada. Link yg ter-copy harusnya : https://github.com/yourusername/repo-name.git. Misal: https://github.com/idrusfachr/personal-blog.git
 ![](/images/clone_repo.png)
 
-### 2. Di Terminal
-Buka terminal di laptop anda, jika menggunakan windows search cmd dan klik command prompt. Langkah ini bertujuan mendownload remote repository yang baru anda buat di Github ke device anda dan akan saling sinkron.
-* Buat folder baru di device
+## 2. Di Terminal
+Buka terminal di laptop anda, jika menggunakan windows search "cmd" dan klik command prompt. Langkah ini bertujuan mendownload remote repository yang baru anda buat di Github ke device anda dan selanjutnya akan saling sinkron.
 
-  Sebelum menggunakan terminal terlebih dulu buatlah folder baru yang akan digunakan menaruh file-file blog anda nanti. Misal buat folder baru di dalam folder C:/Documents bernama personal-blog.
-* Buka terminal
+### Buat folder baru di device
+Sebelum menggunakan terminal terlebih dulu buatlah folder baru yang akan digunakan menaruh file-file blog anda nanti. Misal buat folder baru di dalam folder C:/Documents bernama personal-blog.
+
+### Buka terminal
 Di terminal arahkan ke folder baru yang sudah dibuat dengan cara ketik : cd "/Documents/personal-blog/" enter. Skrg terminal anda aktif di dalam folder personal-blog. Setelah itu ketik git clone [Paste link repo yang diperoleh di step 1] ke dalam terminal. 
 ```{}
 git clone https://github.com/yourusername/repo-name.git
@@ -68,11 +70,138 @@ klik enter, maka file-file di repo github akan terdownload ke dalam folder yang 
 
 Selesai urusan perterminalan.
 
-### 3. Di R Studio
-Sampai di bagian yang mungkin paling familiar dengan anda yaitu R Studio. Di Rstudio ada 3 step yang harus dilakukan.
+## 3. Di R Studio
+Sampai di bagian yang mungkin paling familiar dengan anda yaitu R Studio. Di Rstudio inilah sebagian porsi blogging dihabiskan mulai dari memilih tema, atur layout, membuat dan publish konten dll.
 
-#### 3.1 Install `blogdown`
+### 3.1 Setup
+Langkah pertama adalah install package yang dibutuhkan dan set R project di device.
+#### 1. Install `blogdown` dan Hugo di RStudio
 
+  `blogdown` adalah package yang dibuat khusus untuk kebutuhan blogging menggunakan R, seperti juga `bookdown` untuk mempublish buku melalui R. Dengan blogdown kita bisa mengatur blog kita dari dalam R Studio.
+```{r eval=FALSE}
+  ## Install from CRAN
+  install.packages('blogdown')
+
+```
+
+#### 2. Install Hugo
+
+Setelah `blogdown` terinstall selanjutnya adalah install Hugo kedalam R.
+```{r eval=FALSE}
+blogdown::install_hugo()
+# or
+library(blogdown)
+install_hugo()
+```
+
+#### 3. Set project directory
+
+  Di pojok kanan atas pilih `File -> New Project -> Existing directory`. Pilih folder yang sudah dibuat di step 2 yang sudah berisi file hasil clone repo github anda. Kemudian create project.
+![](/images/project_dir.png)
+Contoh diatas adalah project directory saya, pastikan path project anda sesuai dengan folder yang sudah anda buat di step sebelumnya.
+#### 4. Setting
+  
+  Sekarang anda harusnya ada di dalam project yang barus saja dibuat. Tahap terakhir di bagian set up adalah setting. Sekarang di viewer panel R studio anda seharusnya ada file bernama `.gitignore` (jika belum ada, pastikan lagi sudah melakukan semua step-step sebelumnya). Buka file tersebut dan anda perlu menambahkan beberapa line ke dalam folder ini. Lakukan seperti screenshoot dibawah. 4 baris pertama otomatis di-generate saat clone repo kedalam folder project. Baris setelahnya perlu anda tambahkan sendiri. Jika tidak menggunakan windows, ganti line keenam dengan `.DS_store`. Line terakhir `public/` diperlukan jika anda akan menggunakan netlify (sebaiknya iya, baca bagian Netlify di akhir tulisan ini) untuk menghosting blog anda.
+![](/images/gitignore_setup.png)  
+  
+### 3.2 Saatnya membuat blog
+Sekarang kita siap untuk membuat blog di dalam R Studio. Untuk membuat blog baru cukup jalankan command `blogdown::new_site()`. Tapi.... Sebelumnya pasti anda butuh tema atau tampilan blog anda.
+
+#### 1. Memilih tema
+Ada banyak tema yang tersedia di [Hugo](https://theme.gohugo.io). Di blogdown online book ada beberapa [rekomendasi tema](https://bookdown.org/yihui/blogdown/other-themes.html) yang bisa dipertimbangkan. Untuk sebagai mahasiswa, dosen, researcher ada tema yang sangat direkomendasikan dan sudah populer dikalangan akademisi, [hugo-academic](https://sourcethemes.com/academic/).
+
+Saya sendiri memilih tema [Love It](https://themes.gohugo.io/loveit/) untuk blog saya. **Saran:** jika anda tidak suka keribetan dan lebih mementingkan isi blog anda dibanding tampilan, sebaiknya menggunakan tema default dari blogdown yaitu [hugo-lithium](https://themes.gohugo.io/hugo-lithium-theme/). Set-up custom tema bisa menyita banyak waktu jika belum terbiasa.
+
+Setelah memilih tema, sekarang bisa membuat site baru anda.
+* Jika ingin menggunakan tema default
+```{r eval=FALSE}
+blogdown::new_site()  #menggunakan default theme hugo-lithium
+```
+
+* Jika menggunakan tema custom
+```{r eval=FALSE}
+#misal menggunakan hugo-academic theme
+blogdown::new_site(theme = "gcushen/hugo-academic", theme_example = TRUE) 
+
+#Atau
+
+#misal menggunakan tema yang saya pakai
+blogdown::new_site(theme = "dillonzq/LoveIt", theme_example = TRUE) 
+
+```
+
+#### 2. Waktunya mencoba
+Selamat, atas lahirnya website baru anda. Langkah selanjutnya adalah mencobanya, membuat first post dsb. Dalam bab ini, saatnya anda banyak-banyak membaca blogdown book terutama
+chapter [1.3](https://bookdown.org/yihui/blogdown/rstudio-ide.html) hingga 1.7.
+
+Untuk melihat tampilan awal website anda gunakan addins serve site atau dengan command `blogdown::serve_site()`. Anda akan melihat preview website anda di view pane R studio atau di port http://127.0.0.1:XXXX/ di browser setelah menjalankan `serve_site()`. Gunakan `serve_site()` untuk melihat perubahan yang anda buat sebelum mempublish perubahan yang anda buat. Gunakan `stop_serve()` untuk keluar dari mode preview.
+
+Saya menyarankan untuk menggunakan R Studio Addins untuk melakukan command-command misalnya serve site, membuat post baru, insert image dsb. Addins untuk blogdown seharusnya otomatis terinstall di R Studio anda saat install `blogdown` package.
+![](/images/addins.png)
+ * Salah satu langkah awal yang perlu dilakukan adalah mengedit file `config.toml`anda. Disinilah konfigurasi penting dalam blog anda berada. Langkah paling minimal adalah dengan menyamakan konfigurasi file `config.toml` anda dengan file config di example site dari tema yang anda gunakan. Contoh config di tema [hugo-lithium](https://github.com/yihui/hugo-lithium/blob/master/exampleSite/config.toml). Contoh config dari blog [saya](https://github.com/idrusfachr/hugo-blog/blob/master/config.toml). Yang paling wajib diganti adalah `baseUrl`, set dengan domain yang anda miliki (misal sudah punya) dan harus diakhiri backslash `/` (misal : "https://example.com/"). Contoh diblog ini, saya menggunakan base URL "https://idrusfachr.netlify.com/" karena saya ingin menggunakan Netlify dan subdomain gratis dari Netlify pasti mengandung xxxx.netlify.com, suatu saat jika saya membeli domain baru dengan nama "www.idrusfachr.com/" maka saya harus mengganti baseURL di file config saya dengan URL tersebut.
+
+* Membuat post baru bisa dilakukan dengan command `blogdown::new_post()` atau dengan Addins. Klik Addins, pilih `new post` dan akan muncul panel sebagai berikut. 
+![](/images/new_post.png)
+Isikan judul post anda, nama author, jenis file (gunakan .RMarkdown jika anda butuh run-able R code dipost anda), pilih subdirectory tempat post akan disimpan. Post harus disimpan dibawah folder content/post (kebanyakan), maka anda harus mengisi subdirectory dengan `post` (somehow tema yang saya pakai menggunakan subdir posts, sehingga saya harus mengisinya dengan `posts`). Kenapa ini penting? karena semua file dibawah folder `content/` akan dicopy secara otomatis ke folder `public/` yang akan dirender menjadi html file sehingga bisa muncul di-blog, jika tidak berada dibawah folder `content/` maka tidak akan muncul di-blog anda. Selanjutnya pilih tanggal, tag, category dsb yang diperlukan. Jika sudah klik tombol Done, anda akan diarahkan ke file baru di R Studio anda yang bisa anda isi dengan konten yang akan dibuat. Dengan konfigurasi diatas maka akan muncul Rmarkdown file baru sebagai berikut. Anda tinggal mengisi konten anda dibawah garis `---`. Tutorial [menulis di markdown](https://www.markdownguide.org/basic-syntax/#ordered-lists).
+![](/images/contoh_rmd_file.png)
+
+* Simpan image dan file yang ingin anda tambahkan di post anda di folder `static/`. Jika anda ingin menambahkan image dipost gunakan addins Insert Image atau gunakan `![](/images/chart.png)` di file markdown. Contoh tersebut berarti saya sudah menyimpan image bernama `chart.png` di dalam folder `static/images/`.
+
+* Anda bisa menambahkan fitur-fitur lain seperti [Disqus komentar, google analytics, sytax highlighter dll](https://bookdown.org/yihui/blogdown/templates.html#how-to).
+ 
+* Gunakan terminal di R studio untuk sync dengan github anda. Setiap melakukan perubahan di blog misal membuat post baru, edit config, dsb, commit perubahan tersebut ke github anda dengan `git commit`, setelah selesai melakukan editing, cek preview dengan `serve_site()` dan puas dengan hasilnya, segera push perubahan yang anda lakukan di lokal (device anda) ke remote repo di github dengan `git push`. Terminal di R studio terdapat di panel yang sama dengan console. Command penting:
+* `git add -A` untuk menambahkan semua file yang sudah diedit
+* `git commit -m "isi caption"` untuk commit changes yang sudah dibuat di file-file anda. Ganti caption dengan info yang relevan dengan perubahan yang dilakukan.
+* `git push` menyimpan perubahan yang dilakukan di lokal (laptop) anda ke remote repository (Github repo) anda.
+
+![](/images/terminal.png)
+
+
+Semua pengaturan website anda bisa dilakukan di dalam R Studio termasuk edit layout, tampilan dsb. Sudah banyak referensi baik di blogdown book maupun artikel lain yang bisa dijadikan referensi untuk customise lebih lanjut sesuai kebutuhan.
+
+#### 3. Rangkuman workflow
+Jika dirangkum, workflow yang sebaiknya dilakukan di R Studio adalah berikut:
+1. Buka Rstudio project dari blog anda
+2. Gunakan serve site Addins
+3. Lihat preview site anda di viewer pane atau view di browser http://127.0.0.1:xxxx (bisa dilihat diconsole setelah melakukan serve site).
+4. Pilih file yang ingin anda edit di file pane R Studio
+5. Setelah melakukan editing, save file dengan tombol save atau (ctrl+s). Jangan gunakan tombol knit!). Console R Studio akan reload, view panel akan terupdate dengan perubahan yang baru dilakukan, begitu juga dengan browser setelah anda refresh. Tapi ingat, ini masih dilokal/komputer anda saja, belum live di production.
+6. Jika masih belum puas dengan perubahan/ada revisi, ulangi lagi step 4-5. Setelah puas, lakukan git add, commit dan push perubahan anda ke Github.
+
+
+## Netlify
+Akhirnya sampai di step terakhir. Sebagaimana ditunjukkan di blogdown book bagian [deployment](https://bookdown.org/yihui/blogdown/deployment.html), ada beberapa opsi selain Netlify untuk deploy website anda, misalnya [Github page](https://pages.github.com/) yang juga sering dipakai. Tapi berdasarkan review, Netlify lebih difavoritkan dikalangan developer atau pengguna static site. Hal itu karena [kemudahan, security dan scalability](https://dev.to/simplytammy/13-reasons-why-you-should-be-using-netlify-kgl) yang ditawarkan. Perbandingan [Netlify vs Github page](https://www.netlify.com/github-pages-vs-netlify/).
+
+Anggap saja Netlify sebagai tempat hosting sebagaimana kalau kita blogging dengan platform tradisional kita juga membutuhkan tempat hosting agar website kita bisa live dan bisa diakses.
+
+
+Disinilah github berfungsi karena Netlify akan connect dengan repo blog yang sudah kita buat di Github. Segala perubahan yang ada di repo setelah kita melakukan `git push`, akan secara otomatis ter-update dan dideploy oleh Netlify secara realtime. Jadi setelah anda melakukan perubahan di blog melalui komputer, kemudian commit dan push ke repo gitub, dalam hitungan detik Netlify akan memroses perubahan tersebut dan akan di deploy di production (live website) dan perubahannya langsung bisa diakses oleh pembaca webite anda.
+
+### Deploy time
+Anda bisa mengikuti instruksi [ini](https://www.petanikode.com/hugo-netlify/) atau [ini](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/). Tapi menggunakan Netlify sangat mudah dan simple.
+1. Sign up menggunakan akun Github. Pergi ke www.netlify.com dan sign-up menggunakan akun github.
+2. Login dan pilih `New site from Git -> Continues deployment:` pilih Github.
+3. Setelah itu, pilih repo di Github anda. Pilih repo yang berisi blogdown project pastinya. Misal `username/mypersonal-blog`.
+4. Setelah memilih repo berisi blog anda, selanjutnya lakukan deployment configuration. Ada 2 hal penting yang perlu di-set. **build command** dan **publish directory** (yaitu folder `public/`). Contoh basic konfigurasi dibawah ini. Cek versi hugo yang terinstall di device di terminal dengan command `hugo version`.
+![](/images/netlify_config.png)
+Deploy site dan tunggu beberapa menit Netlify akan build site anda. Setelah selesai anda akan mendapat random subdomain abcd-xyz-1234.netlify.com. Tenang, anda bisa mengganti abcd-xyz-1234 dengan nama yang lebih proper misal idrusfachr.netlify,com. Suatu saat jika anda ingin membeli domain anda bisa mengganti subdomain netlify dengan domain anda misal "domainku.id" dan jangan lupa ganti baseURL di file `congif.toml` setiap anda mengganti nama domain.
+
+Sekarang, website anda sudah live menggunakan `blogdown`, Github dan Netlify. 
+
+## Penutup
+Anda bisa melakukan advance setting misal mengganti warna tampilan, font, layout, menambah page section, customise home, dsb. Tentu saja harus siap berurusan dengan CSS, Js dan html file. Sepanjang tidak urgent sekali, sebaiknya hindari melakukan perubahan yang terlalu advance untuk menghindari error dsb. 
+
+Selamat! telah berhasil membuat blog baru anda. Jika belum berhasil, setidaknya sudah nyemplung, sedikit lagi pasti berhasil. Terima kasih sudah mengikuti post yang panjang ini. Semoga bermanfaat!
+
+Salam.
+
+
+
+Ref utama:
+- https://bookdown.org/yihui/blogdown
+- https://alison.rbind.io/post/2017-06-12-up-and-running-with-blogdown/
+- www.gohugo.io
+- www.netlify.com
 
 
 <!--more-->

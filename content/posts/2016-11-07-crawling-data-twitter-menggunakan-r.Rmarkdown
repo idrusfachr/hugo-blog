@@ -48,7 +48,7 @@ library(devtools)
 install_github("twitteR", username="geoffjentry")  
 ```
 
-### 4. Aktifkan package dan twitter authentication
+### 3. Aktifkan package dan twitter authentication
 Setelah `twitteR` package terinstall, kita tinggal mengaktifkan package dengan function `library(twitteR)`, setelah itu kita perlu melakukan proses autentifikasi menggunakan credential yang kita dapat di step 1 untuk bisa mengakses API twitter. Di package twitteR sendiri telah ada fungsi untuk menjalankan autentifikasi tanpa perlu menggunakan bantuan package lain seperti `httr`.
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(twitteR) #aktifkan package twitteR
@@ -74,7 +74,7 @@ setup_twitter_oauth(api_key, api_secret, token, token_secret) #fungsi untuk aute
 
 Setelah credential telah diaktifkan, sekarang kita sudah bisa mengakses data dari API twitter.
 
-### 5. Crawl data dari twitter
+### 4. Crawl data dari twitter
 Untuk menggenerate data kita menggunakan fungsi `searchTwitter`, fungsi ini mempunyai beberapa parameter, yang terpenting adalah keyword yakni keyword apa yang ingin kita download dari twitter. Kita juga bisa menambah parameter n yakni jumlah tweet yang ingin kita ambil serta mengatur waktu dari rentang kapan data yang mau kita ambil (tentunya dari masa lalu hingga sekarang). Berikut contohnya.
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 #ambil 100 tweet berbahasa indonesia yang mengandung keyword corona dari tanggal 7 hingga 9 Februari 2020
