@@ -23,11 +23,11 @@ autoCollapseToc: yes
 math: no
 ---
 
-Akhrinya saya menengok lagi blog pribadi saya yang sudah lama terbengkalai. Sebagai informasi, blog lama saya dibuat menggunakan blogspot dan memang sudah dari awal isinya seputar data dan lebih techincal. Sekarang saya menggunakan [Hugo](https://gohugo.io/), R Blogdown dan Netlify, alasannya karena lebih mudah untuk blog pribadi dengan tema techincal dan tentu saja karena saya banyak menggunakan dan membahas R di blog saya. Pada post ini saya akan berbagi bagaimana membuat blog dengan R menggunakan blogdown hingga hosting di Netlify.
+Akhirnya saya menengok lagi blog pribadi saya yang sudah lama terbengkalai. Sebagai informasi, blog lama saya dibuat menggunakan blogspot dan memang sudah dari awal isinya seputar data dan lebih technical. Sekarang saya menggunakan [Hugo](https://gohugo.io/), R Blogdown, Github dan Netlify, alasannya karena lebih mudah untuk blog pribadi dengan tema techincal dan tentu saja karena saya banyak menggunakan dan membahas R di blog saya. Pada post ini saya akan berbagi bagaimana membuat blog dengan R menggunakan blogdown hingga hosting di Netlify.
 
 **Disclaimer** : Jika anda ingin membuat blog yang bukan bertema technical dan tidak banyak membutuhkan snippet code, grafik dll, Blogspot, Wordpress dan platform serupa sudah sangat cukup untuk kebutuhan anda. Pun, jika anda berniat membuat technical blog dan anda butuh kepraktisan dan fitur lengkap, medium.com juga lebih dari cukup. Cara yang akan saya bahas ini bisa jadi lebih ribet dan memusingkan untuk yang belum terbiasa. Tapi, kalo anda butuh technical blog yang lebih fleksibel, personal dan anda orangnya semangat belajar hal-hal baru, maka tidak ada salahnya membaca sharing saya ini.
 
-Dengan menggunakan R blogdown, berarti anda harus setuju blog anda akan menggunakan Hugo. Sebagai informasi Hugo adalah salah satu [static site generator](https://wsvincent.com/what-is-a-static-site-generator/). Selain Hugo ada static site generator lain seperti [Jekyll](https://jekyllrb.com/), [Gatsby](gatsbyjs.org/), dll. 
+Dengan menggunakan R blogdown, berarti anda harus setuju blog anda akan menggunakan Hugo. Sebagai informasi Hugo adalah salah satu [static site generator](https://wsvincent.com/what-is-a-static-site-generator/). Selain Hugo ada static site generator lain seperti [Jekyll](https://jekyllrb.com/), [Gatsby](https://www.gatsbyjs.org/), dll. 
 
 ## Pre-Request
 Selamat datang orang yang semangat belajarnya tinggi. Untuk membuat blog sesuai post ini, maka anda harus punya/melakukan hal-hal berikut.
@@ -38,10 +38,10 @@ Selamat datang orang yang semangat belajarnya tinggi. Untuk membuat blog sesuai 
 
 ## Workflow
 ![workflow](/images/workflow.png)
-Saya akan bagi stepnya menjadi 4 bagian tentang apa yang harus anda lakukan di :
-1. R studio
+Saya akan bagi stepnya menjadi 4 bagian tentang apa yang harus anda lakukan di:
+1. Github
 2. Terminal (command prompt kalo di windows)
-3. Github
+3. RStudio
 4. Netlify
 
 ## 1. Di Github
@@ -51,7 +51,7 @@ Hal pertama yang dilakukan adalah membuka github dan masuk ke akun anda (sign up
   Buat repo baru beri nama apapun, misalnya `mypersonal-blog`. Centang initialize with README, beri deskripsi singkat kalo anda mau. Biarkan `Add .gitignore` dan `Add license` sebagai **None**. Seperti contoh dibawah ini:
   ![](/images/create_repo_blog.png)
 ### 1.2 Clone repository
-Buka repo yang baru anda buat dan klik clone this repo. Di sebelah kanan atas ada button hijau dengan tulisan `Clone or Download`. Pilih **clone with HTTPS** lalu copy link yang ada. Link yg ter-copy harusnya : https://github.com/yourusername/repo-name.git. Misal: https://github.com/idrusfachr/personal-blog.git
+Buka repo yang baru anda buat dan klik clone this repo. Di sebelah kanan atas ada button hijau dengan tulisan `Clone or Download`. Pilih **clone with HTTPS** lalu copy link yang ada. Link yg ter-copy harusnya : https://github.com/yourusername/repo-name.git. Contoh: https://github.com/idrusfachr/personal-blog.git
 ![](/images/clone_repo.png)
 
 ## 2. Di Terminal
@@ -101,7 +101,7 @@ install_hugo()
 Contoh diatas adalah project directory saya, pastikan path project anda sesuai dengan folder yang sudah anda buat di step sebelumnya.
 #### 3.1.4. Setting
   
-  Sekarang anda harusnya ada di dalam project yang barus saja dibuat. Tahap terakhir di bagian set up adalah setting. Sekarang di viewer panel R studio anda seharusnya ada file bernama `.gitignore` (jika belum ada, pastikan lagi sudah melakukan semua step-step sebelumnya). Buka file tersebut dan anda perlu menambahkan beberapa line ke dalam folder ini. Lakukan seperti screenshoot dibawah. 4 baris pertama otomatis di-generate saat clone repo kedalam folder project. Baris setelahnya perlu anda tambahkan sendiri. Jika tidak menggunakan windows, ganti line keenam dengan `.DS_store`. Line terakhir `public/` diperlukan jika anda akan menggunakan netlify (sebaiknya iya, baca bagian Netlify di akhir tulisan ini) untuk menghosting blog anda.
+  Sekarang anda harusnya ada di dalam project yang barus saja dibuat. Tahap terakhir di bagian set up adalah setting. Sekarang di viewer pane R studio anda seharusnya ada file bernama `.gitignore` (jika belum ada, pastikan lagi sudah melakukan semua step-step sebelumnya). Buka file tersebut dan anda perlu menambahkan beberapa line ke dalam file ini. Lakukan seperti screenshoot dibawah. 4 baris pertama  di file ini otomatis di-generate saat clone repo kedalam folder project. Baris setelahnya perlu anda tambahkan sendiri. Jika tidak menggunakan windows, ganti line keenam dengan `.DS_store`. Line terakhir `public/` diperlukan jika anda akan menggunakan Netlify (sebaiknya iya, baca bagian Netlify di akhir tulisan ini) untuk menghosting blog anda.
 ![](/images/gitignore_setup.png)  
   
 ### 3.2 Saatnya membuat blog
@@ -172,10 +172,10 @@ Jika dirangkum, workflow yang sebaiknya dilakukan di R Studio adalah berikut:
 ## 4. Di Netlify
 Akhirnya sampai di step terakhir. Sebagaimana ditunjukkan di blogdown book bagian [deployment](https://bookdown.org/yihui/blogdown/deployment.html), ada beberapa opsi selain Netlify untuk deploy website anda, misalnya [Github page](https://pages.github.com/) yang juga sering dipakai. Tapi berdasarkan review, Netlify lebih difavoritkan dikalangan developer atau pengguna static site. Hal itu karena [kemudahan, security dan scalability](https://dev.to/simplytammy/13-reasons-why-you-should-be-using-netlify-kgl) yang ditawarkan. Perbandingan [Netlify vs Github page](https://www.netlify.com/github-pages-vs-netlify/).
 
-Anggap saja Netlify sebagai tempat hosting sebagaimana kalau kita blogging dengan platform tradisional kita juga membutuhkan tempat hosting agar website kita bisa live dan bisa diakses.
+Anggap saja Netlify sebagai tempat hosting sekaligus yang mengurus server website. Sebagaimana kalau kita blogging dengan platform tradisional kita juga membutuhkan tempat hosting agar website kita bisa live dan bisa diakses pembaca.
 
 
-Disinilah github berfungsi karena Netlify akan connect dengan repo blog yang sudah kita buat di Github. Segala perubahan yang ada di repo setelah kita melakukan `git push`, akan secara otomatis ter-update dan dideploy oleh Netlify secara realtime. Jadi setelah anda melakukan perubahan di blog melalui komputer, kemudian commit dan push ke repo gitub, dalam hitungan detik Netlify akan memroses perubahan tersebut dan akan di deploy di production (live website) dan perubahannya langsung bisa diakses oleh pembaca webite anda.
+Disinilah github berfungsi karena Netlify akan connect dengan repo blog yang sudah kita buat di Github. Segala perubahan yang ada di repo setelah kita melakukan `git push`, akan secara otomatis ter-update dan dideploy oleh Netlify secara realtime (continues deployment). Jadi setelah anda melakukan perubahan di blog melalui komputer, kemudian commit dan push ke repo gitub, dalam hitungan detik Netlify akan memroses perubahan tersebut dan akan di deploy di production (live website) dan perubahannya langsung bisa diakses oleh pembaca webite anda.
 
 ### 4.1 Deploy time
 Anda bisa mengikuti instruksi [ini](https://www.petanikode.com/hugo-netlify/) atau [ini](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/). Tapi menggunakan Netlify sangat mudah dan simple.
@@ -191,7 +191,7 @@ Sekarang, website anda sudah live menggunakan `blogdown`, Github dan Netlify.
 ## Penutup
 Anda bisa melakukan advance setting misal mengganti warna tampilan, font, layout, menambah page section, customise home, dsb. Tentu saja harus siap berurusan dengan CSS, Js dan html file. Sepanjang tidak urgent sekali, sebaiknya hindari melakukan perubahan yang terlalu advance untuk menghindari error dsb. 
 
-Selamat! telah berhasil membuat blog baru anda. Jika belum berhasil, setidaknya sudah nyemplung, sedikit lagi pasti berhasil. Terima kasih sudah mengikuti post yang panjang ini. Semoga bermanfaat!
+Selamat! telah berhasil membuat blog baru anda. Jika belum berhasil, setidaknya sudah nyemplung, sedikit lagi inshaa Allah berhasil. Terima kasih sudah mengikuti post yang panjang ini. Semoga bermanfaat!
 
 Salam.
 
