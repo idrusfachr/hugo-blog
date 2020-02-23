@@ -49,7 +49,7 @@ Hal pertama yang dilakukan adalah membuka github dan masuk ke akun anda (sign up
 ### 1.1 Buat new repository
 
   Buat repo baru beri nama apapun, misalnya `mypersonal-blog`. Centang initialize with README, beri deskripsi singkat kalo anda mau. Biarkan `Add .gitignore` dan `Add license` sebagai **None**. Seperti contoh dibawah ini:
-  ![](/images/create_repo_blog.png)
+  ![create repo](/images/create_repo_blog.png)
 ### 1.2 Clone repository
 Buka repo yang baru anda buat dan klik clone this repo. Di sebelah kanan atas ada button hijau dengan tulisan `Clone or Download`. Pilih **clone with HTTPS** lalu copy link yang ada. Link yg ter-copy harusnya : https://github.com/yourusername/repo-name.git. Contoh: https://github.com/idrusfachr/personal-blog.git
 ![](/images/clone_repo.png)
