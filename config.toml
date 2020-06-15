@@ -74,10 +74,10 @@ unsafe = true
   keywords = ["r", "blog", "analytics"]                   # site keywords
 
                                                       #### Home Page Info
-  home_mode = ""                                     # [post, other] home mode
-  home_paginate = 6                                      # special amount of posts in each home post page
+  home_mode = "post"                                     # [post, other] home mode
+  home_paginate = 4                                      # special amount of posts in each home post page
   avatar = "images/ava.jpg"                           # URL of avatar shown in home page
-  subtitle = "I am Muhammad Idrus Fachruddin. This my personal blog, mostly about data & analytics"  # subtitle shown in home page
+  subtitle = "I am Muhammad Idrus. This my personal blog, mostly about data & analytics"  # subtitle shown in home page
 
   socialShare = true                                     # whether to show social share links in post page
 
@@ -129,9 +129,9 @@ unsafe = true
     GitHub = "idrusfachr"
     Linkedin = "idrusfachr"
     Twitter = "idrusfachr"
-    Instagram = "idrusfachr"
+    #Instagram = "idrusfachr"
     #Facebook = "xxxx"
-    Telegram = "idrusfachr"
+    #Telegram = "idrusfachr"
     Medium = "idrusfachr"
     #Gitlab = "xxxx"
     #Youtubelegacy = "xxxx"
