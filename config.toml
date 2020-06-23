@@ -75,7 +75,7 @@ unsafe = true
 
                                                       #### Home Page Info
   home_mode = "post"                                     # [post, other] home mode
-  home_paginate = 2                                      # special amount of posts in each home post page
+  home_paginate = 3                                      # special amount of posts in each home post page
   avatar = "images/ava.jpg"                           # URL of avatar shown in home page
   subtitle = "I am Muhammad Idrus. This my personal blog, mostly about data & analytics"  # subtitle shown in home page
 
