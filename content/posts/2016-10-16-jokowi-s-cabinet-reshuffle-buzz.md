@@ -15,7 +15,7 @@ description: ''
 show_in_homepage: yes
 show_description: no
 license: ''
-featured_image: ''
+featured_image: '/images/clustered_wordcloud.png'
 featured_image_preview: ''
 comment: yes
 toc: no

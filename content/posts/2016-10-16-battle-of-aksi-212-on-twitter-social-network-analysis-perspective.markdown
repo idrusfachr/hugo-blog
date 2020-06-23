@@ -15,8 +15,8 @@ description: ''
 show_in_homepage: yes
 show_description: no
 license: ''
-featured_image: ''
-featured_image_preview: ''
+featured_image: '/images/aksibelaislam3.png'
+featured_image_preview: '/images/aksibelaislam3.png'
 comment: yes
 toc: no
 autoCollapseToc: yes

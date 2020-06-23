@@ -15,7 +15,7 @@ description: ''
 show_in_homepage: yes
 show_description: no
 license: ''
-featured_image: ''
+featured_image: '/images/workflow.png'
 featured_image_preview: ''
 comment: yes
 toc: yes

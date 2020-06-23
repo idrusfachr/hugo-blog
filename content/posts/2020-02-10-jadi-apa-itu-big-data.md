@@ -13,7 +13,7 @@ show_in_homepage: yes
 show_description: no
 license: ''
 featured_image: ''
-featured_image_preview: ''
+featured_image_preview: '/images/bigdatafunny1.png'
 comment: yes
 toc: no
 autoCollapseToc: yes

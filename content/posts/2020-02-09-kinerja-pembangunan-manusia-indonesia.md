@@ -12,7 +12,7 @@ description: 'kinerja indeks pembangunan manusia indonesia (IPM)'
 show_in_homepage: yes
 show_description: no
 license: ''
-featured_image: ''
+featured_image: '/images/ipm.gif'
 featured_image_preview: ''
 comment: yes
 toc: no

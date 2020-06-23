@@ -14,15 +14,109 @@ description: '3D map visualsation di R menggunakan rayshader package'
 show_in_homepage: yes
 show_description: no
 license: ''
-featured_image: ''
-featured_image_preview: ''
+featured_image: '/images/covid_sby.png'
+featured_image_preview: '/images/covid_sby.png'
 comment: yes
 toc: no
 autoCollapseToc: yes
 math: no
 ---
-<!--more-->
+## Intro
 Jadi kali ini saya ingin mencoba package `rayshader` untuk 3D visualisation, berhubung kasus Covid-19 di Surabaya saat ini sangat mengkhawatirkan (zona hitam) per hari ini, maka saya coba kasus Covid-19 di Surabaya ini sebagai use case, mungkin ada manfaat yang bisa didapat nanti.
+
+`rayshader` sendiri fungsi utamanya adalah membuat 3D graph terutama untuk map, topografi, kontur, render satelit dan bisa juga untuk men-translate atau membuat efek 3D pada grafik `ggplot` seperti yang akan saya coba kali ini.
+
+## Workflow
+- Download data, download data shp Indonesia hingga level 4 (kelurahan/desa) dan data jumlah kasus terkonfirmasi covid di Surabaya level kelurahan.
+- Preprocess data .shp dengan data Covid-19 Surabaya
+- Membuat 2D map dengan `ggplot2` sebagai background untuk 3D graph
+- Membuat grafik 3D dengan `rayshader`
+
+## Download Data
+Data shapefile atau shp Indonesia bisa didownload di [website GADM](https://gadm.org/download_country_v2.html), download hingga level 4 (kelurahan/desa). Untuk data kasus Covid-19 Surabaya busa dilihat di [website resmi pemkot](https://lawancovid-19.surabaya.go.id/).
+
+## Preprocess data
+Tahap ini agak tricky karena nama kelurahan yang terdaftar di shapefile data penulisannya beda dengan di website Covid-19 Surabaya misal `Pacarkembang` dan `Pacar Kembang`, padahal nama kelurahan ini akan digunakan untuk join id 2 data tersebut sehingga harus identik. Akhirnya, terpaksa menyamanakan penulisan nama kelurahan di data Covid-19 Surabaya dengan penulisan di shapefile secara *manual*.
+
+Steps :
+
+* Import .rds (shapefile) level 4 data ke dalam R
+  * Filter ambil kota Surabaya saja
+  * Buat data frame berisi ID dan nama kelurahan dara data .rds yang sudah diimport
+* Mencari centroid data dari tiap-tiap kelurahan
+* Import data kasus covid Surabaya (yang sudah diedit manual penamaan nama Kelurahannya)
+* Merge data .rds dan kasus covid-19
+  * Ubah .rds yang sudah diimport menjadi data frame dengan `fortify`
+  * Merge data frame yang sudah didapat dengan data ID dan nama kelurahan di step 1
+  * Merge data map dengan data kasus covid Surabaya (border dan centroid)
+  * Replace `NA` dengan 0
+
+
+### Import Data
+
+
+
+```r
+#import .rds data
+library(sp)
+idn_map = readRDS("/YOUR_PATH/IDN_4_sp.rds")
+#filter Surabaya area only
+idn_map <- idn_map[idn_map$NAME_2 == "Surabaya",] 
+#create data frame of ID and Kelurahan name
+idn_map_dict <- data.frame(id=sapply(slot(idn_map, "polygons"), function(x) slot(x, "ID")), 
+                           Kelurahan=idn_map$NAME_4)
+head(idn_map_dict)
+```
+## Intro
+Jadi kali ini saya ingin mencoba package `rayshader` untuk 3D visualisation, berhubung kasus Covid-19 di Surabaya saat ini sangat mengkhawatirkan (zona hitam) per hari ini, maka saya coba kasus Covid-19 di Surabaya ini sebagai use case, mungkin ada manfaat yang bisa didapat nanti.
+
+`rayshader` sendiri fungsi utamanya adalah membuat 3D graph terutama untuk map, topografi, kontur, render satelit dan bisa juga untuk men-translate atau membuat efek 3D pada grafik `ggplot` seperti yang akan saya coba kali ini.
+
+## Workflow
+- Download data, download data shp Indonesia hingga level 4 (kelurahan/desa) dan data jumlah kasus terkonfirmasi covid di Surabaya level kelurahan.
+- Preprocess data .shp dengan data Covid-19 Surabaya
+- Membuat 2D map dengan `ggplot2` sebagai background untuk 3D graph
+- Membuat grafik 3D dengan `rayshader`
+
+## Download Data
+Data shapefile atau shp Indonesia bisa didownload di [website GADM](https://gadm.org/download_country_v2.html), download hingga level 4 (kelurahan/desa). Untuk data kasus Covid-19 Surabaya busa dilihat di [website resmi pemkot](https://lawancovid-19.surabaya.go.id/).
+
+## Preprocess data
+Tahap ini agak tricky karena nama kelurahan yang terdaftar di shapefile data penulisannya beda dengan di website Covid-19 Surabaya misal `Pacarkembang` dan `Pacar Kembang`, padahal nama kelurahan ini akan digunakan untuk join id 2 data tersebut sehingga harus identik. Akhirnya, terpaksa menyamanakan penulisan nama kelurahan di data Covid-19 Surabaya dengan penulisan di shapefile secara *manual*.
+
+Steps :
+
+* Import .rds (shapefile) level 4 data ke dalam R
+  * Filter ambil kota Surabaya saja
+  * Buat data frame berisi ID dan nama kelurahan dara data .rds yang sudah diimport
+* Mencari centroid data dari tiap-tiap kelurahan
+* Import data kasus covid Surabaya (yang sudah diedit manual penamaan nama Kelurahannya)
+* Merge data .rds dan kasus covid-19
+  * Ubah .rds yang sudah diimport menjadi data frame dengan `fortify`
+  * Merge data frame yang sudah didapat dengan data ID dan nama kelurahan di step 1
+  * Merge data map dengan data kasus covid Surabaya (border dan centroid)
+  * Replace `NA` dengan 0
+
+
+### Import Data
+
+
+
+```r
+#import .rds data
+library(sp)
+idn_map = readRDS("/YOUR_PATH/IDN_4_sp.rds")
+#filter Surabaya area only
+idn_map <- idn_map[idn_map$NAME_2 == "Surabaya",] 
+#create data frame of ID and Kelurahan name
+idn_map_dict <- data.frame(id=sapply(slot(idn_map, "polygons"), function(x) slot(x, "ID")), 
+                           Kelurahan=idn_map$NAME_4)
+head(idn_map_dict)
+```
+## Intro
+Jadi kali ini saya ingin mencoba package `rayshader` untuk 3D visualisation, berhubung kasus Covid-19 di Surabaya saat ini sangat mengkhawatirkan (zona hitam) per hari ini, maka saya coba kasus Covid-19 di Surabaya ini sebagai use case, mungkin ada manfaat yang bisa didapat nanti.
+
+`rayshader` sendiri fungsi utamanya adalah membuat 3D graph terutama untuk map, topografi, kontur, render satelit dan bisa juga untuk men-translate atau membuat efek 3D pada grafik `ggplot` seperti yang akan saya coba kali ini.
 
 ## Workflow
 - Download data, download data shp Indonesia hingga level 4 (kelurahan/desa) dan data jumlah kasus terkonfirmasi covid di Surabaya level kelurahan.
@@ -162,7 +256,7 @@ map_bg = ggplot(map_data, aes(long, lat, group=group, fill = KUMULATIF.KONFIRMAS
 map_bg
 ```
 
-<img src="/posts/2020-06-06-3d-visualisation-kasus-covid-19-perkelurahan-di-surabaya_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<img src="/posts/2020-06-06-3d-visualisation-kasus-covid-19-perkelurahan-di-surabaya_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
 Save map as PNG
 
@@ -182,7 +276,9 @@ covid_sby_map = ggplot(centroid_map_data) +
   geom_point(aes(x=lat, y=long, color=KUMULATIF.KONFIRMASI),size=2) + 
   scale_colour_gradient(name = 'Confirmed Cases', 
                         limits=range(centroid_map_data$KUMULATIF.KONFIRMASI), 
-                        low="#FCB9B2", high="#B23A48") + 
+                        low="#FCB9B2", high="#B23A48") +
+  ggtitle("Kasus Covid-19 Perkelurahan di Surabaya per 6 Juni 2020") +
+  labs(caption = "Source data : lawancovid-19.surabaya.go.id \nGraph by : idrusfachr.netlify.com") +
   theme(axis.line=element_blank(), 
         axis.text.x=element_blank(), axis.title.x=element_blank(),
         axis.text.y=element_blank(), axis.title.y=element_blank(),
@@ -191,7 +287,7 @@ covid_sby_map = ggplot(centroid_map_data) +
 covid_sby_map
 ```
 
-<img src="/posts/2020-06-06-3d-visualisation-kasus-covid-19-perkelurahan-di-surabaya_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="/posts/2020-06-06-3d-visualisation-kasus-covid-19-perkelurahan-di-surabaya_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 
 Kegunaan data centroid yang dibuat sebelumnya adalah untuk menampilkan point merah seperti di map diatas.
 
@@ -200,15 +296,12 @@ Kegunaan data centroid yang dibuat sebelumnya adalah untuk menampilkan point mer
 ```r
 # 3D Plot
 library(rayshader)
-filename_stl <- tempfile()
 plot_gg(covid_sby_map, multicore = TRUE, width=5,height=7,scale=300,windowsize=c(1600,1000),
-       zoom = 0.55, phi = 30)
+       zoom = 0.55, phi = 30) 
 
-render_snapshot(title_text = "Kasus Covid-19 Perkelurahan di Surabaya per 6 Juni 2020 \nidrusfachr.netlify.com")
+render_snapshot(clear = TRUE)
 ```
-
-<img src="/posts/2020-06-06-3d-visualisation-kasus-covid-19-perkelurahan-di-surabaya_files/figure-html/unnamed-chunk-12-1.png" width="672" />
-
+![](/images/covid_sby.png)
 Render Video
 
 ```r
@@ -229,7 +322,7 @@ render_movie(filename = 'map_video', type = "custom", frames = 360,  phi = phive
 
 rgl.close()
 ```
-![](/images/map_video.mp4)
+![](/images/output1.mp4)
 
 
 
