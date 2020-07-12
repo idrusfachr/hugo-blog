@@ -14,7 +14,7 @@ show_in_homepage: yes
 show_description: no
 license: ''
 featured_image: '/images/ml_slide_preview.png'
-featured_image_preview: ''git 
+featured_image_preview: ''
 comment: yes
 toc: no
 autoCollapseToc: yes
