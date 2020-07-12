@@ -73,6 +73,7 @@ unsafe = true
   description = "idrusfachr personal data blog"                      # site description
   keywords = ["r", "blog", "analytics"]                   # site keywords
 
+  google_tag_manager = "GTM-MKNV8M3"                    # GTM Tracking ID
                                                       #### Home Page Info
   home_mode = "post"                                     # [post, other] home mode
   home_paginate = 3                                      # special amount of posts in each home post page
