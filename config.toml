@@ -62,11 +62,11 @@ unsafe = true
     url = "about"
     weight = 4
 
-  #[[menu.main]]
-   # identifier = "zh"
-  #  name = '<i class="fas fa-language fa-fw"></i>'
-   # url = "https://hugo-loveit-zh.netlify.com"
-  #  weight = 5
+  [[menu.main]]
+   identifier = "Covid-19 Dashboard"
+    name = '<i class="far fa-chart-bar"></i>'
+    url = "https://idrusfachr.github.io/covid19-flexdashboard"
+    weight = 5
 
 [params]
   version = "5.x"                                        # LoveIt theme version
