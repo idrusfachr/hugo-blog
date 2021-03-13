@@ -7,7 +7,7 @@ title: About
 ## Tentang blog ini
 Blog ini berisi tentang ekspresi, pandangan dan analisa yang terlintas di kepala saya. Jika sesuai rencana, sebisa mungkin post di blog ini akan disertai dengan data dan analisa atau sekedar sharing tentang apa yang pernah saya kerjakan atau saya pelajari.
 
-Saya bersyukur ilmu yang saya pelajari selama kuliah bisa tersalurkan dalam pekerjaan sehari-hari. Blog ini saya buat  sebagai wujud syukur dan sarana berbagi dan belajar bersama agar ekosistem data di Indonesia semakin baik lagi.
+Saya bersyukur ilmu yang saya pelajari selama kuliah bisa tersalurkan dalam pekerjaan sehari-hari. Blog ini saya buat  sebagai sarana berbagi dan belajar bersama agar ekosistem data semakin baik lagi karena saya pribadi banyak mendapat benefit dari sharing pengalaman orang lain terutama melalui tulisan.
 
 
 >  _“Information is the oil of the 21st century, and analytics is the combustion engine.” – Peter Sondergaard._
