@@ -35,6 +35,6 @@ Snapshot daftar isi :
 8. How to Talk Back to Statistic?
  
 
-## [SLIDE HERE](/pdf/HOW_TO_LIE_WITH_STATISTICS.pdf) 
+## [SLIDE HERE](https://drive.google.com/file/d/1sdOM5ccqnm3E7pa0c9brRF-joA6a9lI1/view?usp=sharing) 
 
 <!--more-->
