@@ -1,4 +1,4 @@
-baseURL = "https://idrusfachr.netlify.com/"
+baseURL = "https://idrusfachr.netlify.app/"
 languageCode = "en"                                      # website language
 defaultContentLanguage = "en"                            # [en, zh, ...] determines which i18n file to use
 title = "idrusfachr"                                   # website title
