@@ -4,27 +4,25 @@ draft: false
 title: About
 ---
 
-## Tentang blog ini
-Blog ini berisi tentang ekspresi, pandangan dan analisa yang terlintas di kepala saya. Jika sesuai rencana, sebisa mungkin post di blog ini akan disertai dengan data dan analisa atau sekedar sharing tentang apa yang pernah saya kerjakan atau saya pelajari.
+## About blog
 
-Saya bersyukur ilmu yang saya pelajari selama kuliah bisa tersalurkan dalam pekerjaan sehari-hari. Blog ini saya buat  sebagai sarana berbagi dan belajar bersama agar ekosistem data semakin baik lagi karena saya pribadi banyak mendapat benefit dari sharing pengalaman orang lain terutama melalui tulisan.
+I don't really write :)
 
 
 >  _“Information is the oil of the 21st century, and analytics is the combustion engine.” – Peter Sondergaard._
 
 
-## Tentang saya
-Saya bekerja sebagai data analyst di industri digital sejak 2015. Lebih suka menggunakan R (+kopi) sebagai senjata menyelesaikan tasks sehari-hari. Mengenal R sejak kuliah dan semakin intens saat menyelesaikan skripsi. Sesekali juga mencoba Python.
+## About me
+A Data analyst with 8+ years professional experience including 3+ years leading and managing data team. 
 
-Kesibukan lain, sedang menggiatkan hobby _running_ sebagai sarana balas dendam karena terlalu sering duduk didepan layar. Mencoba menjadi teman belajar yang baik untuk anak dan mendengar nasihat dari para guru saat senggang.
-
+A father of 3 who spend the spare time playing with the kids or doing sports. I do badminton, futsal, running and gym.
 
 :(fab fa-google): email : idrus.stat11@gmail.com
 
 
 
 ### Blog technology
-Blog ini dibuat dengan [R blogdown](https://bookdown.org/yihui/blogdown/) + [Hugo](https://gohugo.io/) + dihosting di [github](https://github.com/) + dideploy di [Netlify](https://www.netlify.com)
+Made with [R blogdown](https://bookdown.org/yihui/blogdown/) + [Hugo](https://gohugo.io/) + hosted on [github](https://github.com/) + deployed on [Netlify](https://www.netlify.com)
 
 
 ##### :(fas fa-moon): / :(fas fa-sun): Mode

@@ -22,9 +22,10 @@ autoCollapseToc: yes
 math: no
 ---
 
-![](images/story_telling_w_data.png)
 
 In today’s data-driven world, the ability to transform complex data into a compelling narrative is a crucial skill. Whether you are a business analyst, marketer, or researcher, effectively communicating data insights can set you apart and drive meaningful impact. This is where the book ["Storytelling with Data"](https://www.storytellingwithdata.com/) by Cole Nussbaumer Knaflic comes into play.
+
+![](images/story_telling_w_data.png)
 
 Here i want to share summary of the go-to book for data visualization. This slide i created with my colleague [Muslikh](https://www.linkedin.com/in/muslihannur) back when we were on GDP Labs, we also had a chance to share the slide to our team. Me personally shared this slide again 2 times during my tenure at Aruna, one for the internal data team and the other for broaden audience with various background across company.
 
