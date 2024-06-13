@@ -13,18 +13,16 @@ I don't really write :)
 
 
 ## About me
-A Data analyst with 8+ years professional experience including 3+ years leading and managing data team. 
+A Data analyst with Statistics background, have 8+ years professional experience including 3+ years leading and managing data team. Based in Jakarta area.
 
 A father of 3 who spend the spare time playing with the kids or doing sports. I do badminton, futsal, running and gym.
 
 :(fab fa-google): email : idrus.stat11@gmail.com
 
+:(fab fa-linkedin): [linkedin](https://www.linkedin.com/in/idrusfachr)
 
 
 ### Blog technology
 Made with [R blogdown](https://bookdown.org/yihui/blogdown/) + [Hugo](https://gohugo.io/) + hosted on [github](https://github.com/) + deployed on [Netlify](https://www.netlify.com)
 
-
-##### :(fas fa-moon): / :(fas fa-sun): Mode
-* Klik icon bulat untuk pilih dark mode
 
