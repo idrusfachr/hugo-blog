@@ -1,7 +1,7 @@
 ---
 title: '[Book Summary] Storytelling With Data'
 author: idrusfachr
-date: '2024-06-13'
+date: '2024-06-12'
 slug: [summary-book-storytelling-with-data]
 categories:
   - Talk
@@ -15,12 +15,13 @@ show_in_homepage: yes
 show_description: no
 license: ''
 featured_image: 'images/story_telling_w_data.png'
-featured_image_preview: 'images/story_telling_w_data.png'
+featured_image_preview: '/images/story_telling_w_data.png'
 comment: yes
 toc: no
 autoCollapseToc: yes
 math: no
 ---
+![book cover](/images/story_telling_w_data.png)
 
 In today’s data-driven world, the ability to transform complex data into a compelling narrative is a crucial skill. Whether you are a business analyst, marketer, or researcher, effectively communicating data insights can set you apart and drive meaningful impact. This is where the book ["Storytelling with Data"](https://www.storytellingwithdata.com/) by Cole Nussbaumer Knaflic comes into play.
 
