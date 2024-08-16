@@ -1,7 +1,7 @@
 ---
 title: 'Saving the Sale: Analyzing Cancellation Trends at The Look E-commerce using
   R'
-author: idrusfachr
+author: Package Build
 date: '2024-08-16'
 slug: []
 categories:
