@@ -261,4 +261,3 @@ unsafe = true
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
-  taxonomy = ["HTML"]
