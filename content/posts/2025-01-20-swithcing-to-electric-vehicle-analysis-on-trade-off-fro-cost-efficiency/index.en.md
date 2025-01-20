@@ -1,5 +1,5 @@
 ---
-title: 'Swithcing To Electric Vehicle : Analysis on Trade-off fro Cost Efficiency'
+title: 'Swithcing To Electric Vehicle : Analysis on Trade-off for Cost Efficiency'
 author: Package Build
 date: '2025-01-20'
 slug: []
@@ -39,6 +39,7 @@ One area where EVs have the potential to outperform regular (gasoline) motorcycl
 
 ### Choosing My EV: Polytron Fox R
 After some research and comparisons, I decided to purchase the Polytron Fox R. The brand’s reputation, user reviews, and dealer/service center coverage were major plus points for me. I also appreciated the battery subscription scheme, which I consider a significant advantage. Since the battery is the most expensive part of an EV (accounting for around 30% of the vehicle’s price) and we’re still uncertain about its lifespan in this early EV era, the subscription model mitigates the risk upfront.
+
 
 ### Cost Breakdown
 So, when does switching to an EV start saving money? Let’s break down the costs and visualize the data:
