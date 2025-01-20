@@ -117,7 +117,7 @@ ggplot(order_trend) +
   ) +
   annotate(
     'curve',
-    x = as.Date("2023-05-01"), # Play around with the coordinates until you're satisfied
+    x = as.Date("2023-05-01"), 
     y = 6600,
     yend = 5000,
     xend = as.Date("2024-01-01"),
@@ -135,7 +135,7 @@ ggplot(order_trend) +
   ) +
   annotate(
     'curve',
-    x = as.Date("2020-10-01"), # Play around with the coordinates until you're satisfied
+    x = as.Date("2020-10-01"), 
     y = 3100,
     yend = 2000,
     xend = as.Date("2021-05-01"),
