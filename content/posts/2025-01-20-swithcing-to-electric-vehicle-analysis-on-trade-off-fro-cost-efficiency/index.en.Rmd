@@ -1,5 +1,5 @@
 ---
-title: 'Swithcing To Electric Vehicle : Analysis on Trade-off for Cost Efficiency'
+title: 'Switching To Electric Vehicle : Analysis on Trade-off for Cost Efficiency'
 author: Package Build
 date: '2025-01-20'
 slug: []
@@ -231,5 +231,5 @@ When factoring in taxes and maintenance, the break-even distance would be even l
 In my case, I travel 78 km daily (yes, that much!), which allows me to save approximately 45.29% compared to using a regular motorcycle. This saving could be even higher if I included other costs like taxes and maintenance.
 
 ### Conclusion
-Based on this data and the potential cost savings, I decided to switch to an EV—and so far, it’s been the right decision.
+Thats the numbers behind my decision to swith to EV, and so far, it’s been the right decision.
 
