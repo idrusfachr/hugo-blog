@@ -1,16 +1,14 @@
 ---
-title: How I Built an Automated Data Pipeline (Without Being a Data Engineer)
+title: How We Built an Automated Data Pipeline (Without Being a Data Engineer)
 author: Package Build
-date: '2025-11-11'
+date: '2025-11-10'
 slug: []
 categories:
   - Opinion
 tags:
-  - airbyte
-  - dataengineering
   - etl
-lastmod: '2025-11-10T21:12:08+07:00'
-draft: no
+  - dataengineering
+lastmod: '2025-11-11T11:27:48+07:00'
 description: ''
 show_in_homepage: yes
 show_description: no
@@ -24,7 +22,7 @@ math: no
 ---
 
 <!--more-->
-This is the story of how a ~~3 people~~ small team from a digital marketing agency tackled a big data engineering project, despite having zero 'official' data engineers on staff. (Sure, I’d been around DE projects in a previous job, but I was never the one hands-on building the system). As a digital agency who run tons of marketing campaigns daily, we face a constant, real-world headache: pulling reporting data from dozens of client accounts across a ton of ad platforms (like Facebook Ads, Google Ads, TikTok Ads, etc) and other sources (like GA4, google sheets and so on)
+This is the story of how ~~3 people~~ a small team from a digital marketing agency tackled a big data engineering project, despite having zero 'official' data engineers on staff. (Sure, I’d been around DE projects in a previous job, but I was never the one hands-on building the system). As a digital agency who run tons of marketing campaigns daily, we face a constant, real-world headache: pulling reporting data from dozens of client accounts across a ton of ad platforms (like Facebook Ads, Google Ads, TikTok Ads, etc) and other sources (like GA4, google sheets and so on)
 
 Before this project, we were subscribing to 3rd-party tools for our data collection. Honestly, they weren't that expensive, but we paid for it in other ways. They were painfully slow and would error out constantly. This was a nightmare for us, especially when it affected the external reports and dashboards we shared with clients—it sacrificed our credibility. So, we decided to find a better way.
 
@@ -95,4 +93,3 @@ Building this system is a win for us. We now have a reliable, automated data pip
 The biggest takeaway for us is that the "low-code" movement is real. Tools like Airbyte (and AI) empower people like me and my team from an digital marketing agency to build systems that were once reserved for specialized engineering teams. 
 
 By combining a low-code tool (Airbyte) with some basic, learnable "ops" tools (GCP, Nginx), We were able to build a professional-grade solution that saves our team money and hours of work every single week.
-

@@ -13,9 +13,8 @@ I don't really write :)
 
 
 ## About me
-A Data analyst with Statistics background, have 8+ years professional experience including 3+ years leading and managing data team. Based in Jakarta area.
+A Data analyst with Statistics background, have 8+ years professional experience including 3+ years leading and managing data team. Based in Jakarta greater area.
 
-A father of 3 who spend the spare time playing with the kids or doing sports. I do badminton, futsal, running and gym.
 
 :(fab fa-google): email : idrus.stat11@gmail.com
 
